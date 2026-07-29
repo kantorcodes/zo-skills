@@ -18,6 +18,8 @@
   skill: clarion-watchlist-update
 - repository: jingerzz/clarion-intelligence-system
   skill: clarion-living-letter-update
+- repository: jingerzz/clarion-intelligence-system
+  skill: clarion-portfolio-monitor
 - repository: clawdbot/clawdbot
   skill: gog
   description: Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and Docs
