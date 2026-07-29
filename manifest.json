@@ -3,6 +3,20 @@
   "archive_root": "skills-main",
   "skills": [
     {
+      "name": "clarion-portfolio-monitor",
+      "description": "Fetch live portfolio positions, balances, and daily transactions from TastyTrade. Outputs a structured JSON snapshot and a human-readable summary to ~/clarion/portfolio/. Use when the user asks for portfolio status, net liquidation value (NLV), position P/L, daily fills, or needs current holdings for the investor letter or thesis monitoring. Requires TastyTrade OAuth credentials (client secret + refresh token) stored as Zo secrets.",
+      "compatibility": "Created for Zo Computer",
+      "metadata": {
+        "author": "cis.zo.computer",
+        "category": "External",
+        "display-name": "Clarion Portfolio Monitor",
+        "homepage": "https://github.com/jingerzz/clarion-intelligence-system"
+      },
+      "slug": "clarion-portfolio-monitor",
+      "path": "External/clarion-portfolio-monitor",
+      "date_added": "2026-07-29"
+    },
+    {
       "name": "humation-avatar",
       "description": "A Zo Computer skill for adding Humation avatars to agent products. It covers installing Humation npm packages into target projects, React integration, Core SVG rendering, static SVG generation, browser ESM usage in zo.space page routes, and legacy Humation SVG API compatibility.",
       "compatibility": "Created for Zo Computer",
@@ -83,7 +97,7 @@
     },
     {
       "name": "clarion-setup",
-      "description": "Bootstraps the Clarion Intelligence System on Zo Computer. Run this once after installing — clones the source repo, installs the ai_buffett_zo Python library, creates the workspace data tree under /home/workspace/clarion/ (auto-detected on Zo), auto-installs all nine sibling clarion-* skills (regime-check, sec-research, single-stock-eval, expected-return-calc, value-screener, thesis-write, thesis-monitor, watchlist-update, living-letter-update) under /home/workspace/Skills/, and registers the sec-indexer background service. Idempotent (safe to re-run). The only manual step is one batched human checkpoint near the end (SEC EDGAR name + email, and creating the ZO_API_KEY secret). Persona routing for Clarion is opt-in via a separate prompt after install (\"install Clarion personas and routing rules\"). Use when the user asks to \"set up Clarion\" or \"install Clarion\".",
+      "description": "Bootstraps the Clarion Intelligence System on Zo Computer. Run this once after installing — clones the source repo, installs the ai_buffett_zo Python library, creates the workspace data tree under /home/workspace/clarion/ (auto-detected on Zo), auto-installs all ten sibling clarion-* skills (regime-check, sec-research, single-stock-eval, expected-return-calc, value-screener, thesis-write, thesis-monitor, watchlist-update, living-letter-update, portfolio-monitor) under /home/workspace/Skills/, and registers the sec-indexer background service. Idempotent (safe to re-run). The only manual step is one batched human checkpoint near the end (SEC EDGAR name + email, and creating the ZO_API_KEY secret). Persona routing for Clarion is opt-in via a separate prompt after install (\"install Clarion personas and routing rules\"). Use when the user asks to \"set up Clarion\" or \"install Clarion\".",
       "metadata": {
         "author": "cis.zo.computer",
         "category": "External",
