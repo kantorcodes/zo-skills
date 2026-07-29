@@ -44,13 +44,39 @@ def format_regime_output(snap: RegimeSnapshot) -> str:
         md_table(
             ["Signal", "Value"],
             [
+                ["SPY 1d return", f"{snap.spy_ret_1d:+.2%}"],
+                ["TLT 1d return", f"{snap.tlt_ret_1d:+.2%}"],
                 ["SPY 20d return", f"{snap.spy_ret_short:+.2%}"],
                 ["TLT 20d return", f"{snap.tlt_ret_short:+.2%}"],
                 ["RSP-SPY 60d spread", f"{snap.rsp_vs_spy_long:+.2%}"],
+                ["Breadth", snap.breadth_flag],
                 ["SPY drawdown vs 252d high", f"{snap.spy_drawdown_from_high:+.2%}"],
             ],
         ),
     ]
+    if snap.big_blue_day:
+        parts.append("")
+        parts.append(
+            f"> **Big-Blue-Day flag fired today.** SPY {snap.spy_ret_1d:+.2%}, "
+            f"TLT {snap.tlt_ret_1d:+.2%} — acute risk-off shock with bonds hedging hard. "
+            f"Historically a high-odds add-on-weakness window for long-horizon investors; "
+            f"1-2 trading day actionable window per the Phase 2 backtest."
+        )
+    if snap.capitulation:
+        parts.append("")
+        parts.append(
+            f"> **Capitulation flag fired today.** SPY {snap.spy_ret_1d:+.2%} with "
+            f"TLT {snap.tlt_ret_1d:+.2%} on above-average volume — both-down panic with "
+            f"strong participation. Buy-the-panic regime for long-horizon investors; "
+            f"1-2 trading day actionable window per the Phase 2 backtest."
+        )
+    if snap.breadth_flag == "narrow":
+        parts.append("")
+        parts.append(
+            f"> **Breadth flag:** narrow leadership — RSP lags SPY by "
+            f"{abs(snap.rsp_vs_spy_long):.1%} over 60d. Informational for sizing; "
+            f"does not change the color."
+        )
     if snap.hurdle_rate_pct is not None:
         parts.append("")
         parts.append("**Equity hurdle rate**")
