@@ -64,12 +64,12 @@ When Guard blocks or queues work, inspect the actual request and evidence before
 
 ```bash
 hol-guard approvals
-hol-guard approvals open
+hol-guard approvals open <request-id>
 hol-guard receipts
 hol-guard events
 ```
 
-Approve or deny only through Guard-owned commands after reviewing the risk reason and requested scope. Do not bypass a Guard decision by editing the protected harness configuration manually.
+Use the pending request ID returned by `hol-guard approvals` when opening a specific approval. Approve or deny only through Guard-owned commands after reviewing the risk reason and requested scope. Do not bypass a Guard decision by editing the protected harness configuration manually.
 
 ## Boundary
 
